@@ -1,111 +1,31 @@
 [
   {
-    "line": 2,
+    "line": 1,
     "elements": [
       {
-        "line": 4,
-        "name": "Logging in yard button",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1254040700,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "User will navigate to application",
-            "match": {
-              "location": "steps.ElarSteps.user_will_navigate_to_application()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 207078700,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "logs in with username \"student@mindtekbootcamp.com\" and password \"ilovejava\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"student@mindtekbootcamp.com\"",
-                  "offset": 22
-                },
-                {
-                  "val": "\"ilovejava\"",
-                  "offset": 65
-                }
-              ],
-              "location": "steps.ElarSteps.logs_in_with_username_and_password(java.lang.String,java.lang.String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 73484700,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "User clicks logged in",
-            "match": {
-              "location": "steps.ElarSteps.user_clicks_logged_in()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 868238000,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "User clicks the Yard button",
-            "match": {
-              "location": "steps.ElarSteps.user_clicks_the_yard_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 759213100,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "User clicks the Add Yard button",
-            "match": {
-              "location": "steps.ElarSteps.user_clicks_the_add_yard_button()"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2023-07-25T18:36:56.984Z",
+        "start_timestamp": "2023-08-11T01:34:30.237Z",
         "before": [
           {
             "result": {
-              "duration": 1575769000,
+              "duration": 2323600,
               "status": "passed"
             },
             "match": {
-              "location": "steps.Hooks.setup()"
+              "location": "steps.Hooks.setup(io.cucumber.java.Scenario)"
             }
           }
         ],
-        "line": 44,
-        "name": "Testing invalid zip number (less than 5 digits)",
+        "line": 20,
+        "name": "Validating PUT booking Api call",
         "description": "",
-        "id": "validation-yard-button;testing-invalid-zip-number-(less-than-5-digits)",
+        "id": "validating-booking-api-calls;validating-put-booking-api-call",
         "after": [
           {
             "result": {
-              "duration": 3204201800,
               "status": "passed"
             },
             "match": {
-              "location": "steps.Hooks.tearDown()"
+              "location": "steps.Hooks.tearDown(io.cucumber.java.Scenario)"
             }
           }
         ],
@@ -114,98 +34,150 @@
         "steps": [
           {
             "result": {
-              "duration": 290105800,
+              "duration": 1959286400,
               "status": "passed"
             },
-            "line": 45,
-            "name": "User enter \"1122\" inside the zip field",
+            "line": 21,
+            "name": "user creates booking with POST api call with data",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"1122\"",
-                  "offset": 11
-                }
-              ],
-              "location": "steps.ElarSteps.user_enter_inside_the_zip_field(java.lang.String)"
+              "location": "steps.BookingApiSteps.user_creates_booking_with_post_api_call_with_data(io.cucumber.datatable.DataTable)"
             },
+            "rows": [
+              {
+                "cells": [
+                  "firstname",
+                  "Harsh"
+                ]
+              },
+              {
+                "cells": [
+                  "lastname",
+                  "Patel"
+                ]
+              },
+              {
+                "cells": [
+                  "totalprice",
+                  "100"
+                ]
+              },
+              {
+                "cells": [
+                  "checkin",
+                  "2018-01-01"
+                ]
+              },
+              {
+                "cells": [
+                  "checkout",
+                  "2019-02-02"
+                ]
+              },
+              {
+                "cells": [
+                  "additionalneeds",
+                  "Breakfast"
+                ]
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 177007200,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "user updates booking with PUT api call with data",
+            "match": {
+              "location": "steps.BookingApiSteps.user_updates_booking_with_put_api_call_with_data(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "firstname",
+                  "Jim"
+                ]
+              },
+              {
+                "cells": [
+                  "checkin",
+                  "2023-01-01"
+                ]
+              },
+              {
+                "cells": [
+                  "checkout",
+                  "2023-02-02"
+                ]
+              }
+            ],
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 34000700,
+              "duration": 160649700,
               "status": "passed"
             },
-            "line": 46,
-            "name": "the Zip field should show an error message \"Min length is 5 characters, currently it is 4\"",
+            "line": 33,
+            "name": "user gates updated booking with GET api call",
+            "match": {
+              "location": "steps.BookingApiSteps.user_gates_updated_booking_with_get_api_call()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 35641600,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "user validates 200 status code",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Min length is 5 characters, currently it is 4\"",
-                  "offset": 43
+                  "val": "200",
+                  "offset": 15
                 }
               ],
-              "location": "steps.ElarSteps.the_zip_field_should_show_an_error_message(java.lang.String)"
+              "location": "steps.BookingApiSteps.user_validates_status_code(java.lang.Integer)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15093000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "user validates updated data matches with response of get call",
+            "match": {
+              "location": "steps.BookingApiSteps.user_validates_updated_data_matches_with_response_of_get_call()"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@regression"
-          },
-          {
-            "name": "@ui"
+            "name": "@MB8-102"
           },
           {
             "name": "@smoke"
           },
           {
-            "name": "@elarLogin"
+            "name": "@regression"
           },
           {
-            "name": "@zip"
+            "name": "@api"
           }
         ]
       }
     ],
-    "name": "Validation Yard button",
+    "name": "Validating booking api calls",
     "description": "",
-    "id": "validation-yard-button",
+    "id": "validating-booking-api-calls",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/ElarYard.feature",
-    "tags": [
-      {
-        "name": "@regression",
-        "type": "Tag",
-        "location": {
-          "line": 1,
-          "column": 1
-        }
-      },
-      {
-        "name": "@ui",
-        "type": "Tag",
-        "location": {
-          "line": 1,
-          "column": 13
-        }
-      },
-      {
-        "name": "@smoke",
-        "type": "Tag",
-        "location": {
-          "line": 1,
-          "column": 17
-        }
-      },
-      {
-        "name": "@elarLogin",
-        "type": "Tag",
-        "location": {
-          "line": 1,
-          "column": 24
-        }
-      }
-    ]
+    "uri": "file:src/test/resources/features/BookingApiTesrs.feature",
+    "tags": []
   }
 ]

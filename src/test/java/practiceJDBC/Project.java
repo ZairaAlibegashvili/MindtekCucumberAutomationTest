@@ -15,14 +15,16 @@ public class Project {
                 "ciforest");
 
         Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        ResultSet resultSet = statement.executeQuery("select * from core_company");
-int count=0;
-        while (resultSet.next()) {
-            System.out.println(count+" "+resultSet.getString(2)+" "+resultSet.getString("company_name"));
-            count++;
+        ResultSet resultSet = statement.executeQuery("select* from core_company where company_name like 'Withards'");
+        System.out.println(resultSet.next());
+
+
+   /*     List<Map<String,Object>> tableData=JDBCUtils.runQuery("select* from core_company where company_name like 'Withards'");
+        for (Map<String,Object> data:tableData){
+            System.out.println(data.get("company_name"));*/
+        }
 
         }
 
 
-    }
-}
+
